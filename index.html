@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <script>(function(w, d, t, u, o) {w[u] = w[u] || [], o.ts = (new Date).getTime();var n = d.createElement(t);n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""),n.async = true, d.getElementsByTagName("head")[0].appendChild(n)})(window, document, "script", "uetq", {ti: "187260045"});</script>
     <meta charset="UTF-8">
-<!-- This site is hosted on Netlify. Anyone can build and deploy a site
-     like this one for free: https://netlify.new/?utm_campaign=ai-legible&utm_source=comment&utm_medium=referral&utm_id=4d50707f-8a22-493c-a01d-b60c6e7d2cb7
-     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
-<meta name="hosting-provider" content="Netlify">
-<meta name="netlify-deploy" content="https://netlify.new/?utm_campaign=ai-legible&amp;utm_source=meta&amp;utm_medium=referral&amp;utm_id=4d50707f-8a22-493c-a01d-b60c6e7d2cb7">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UET-demo</title>
+    
+    <!-- Bing UET Tracking Script -->
+    <script>
+        (function(w, d, t, u, o) {
+            w[u] = w[u] || [];
+            o.ts = (new Date()).getTime();
+            var n = d.createElement(t);
+            n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : "");
+            n.async = true;
+            d.head.appendChild(n);
+        })(window, document, 'script', 'uetq', {ti: 'YOUR_UET_TRACKING_ID'});
+    </script>
+
+    <!-- Netlify Hosting Meta -->
+    <meta name="hosting-provider" content="Netlify">
+    <meta name="netlify-deploy" content="https://netlify.new/?utm_campaign=ai-legible&utm_source=meta&utm_medium=referral&utm_id=4d50707f-8a22-493c-a01d-b60c6e7d2cb7">
+
     <style>
         body {
             margin: 0;
@@ -46,29 +57,36 @@
         }
     </style>
 </head>
+
 <body>
-<!-- 居中第一行显示标题 -->
-<h1>UET-demo</h1>
+    <!-- Title -->
+    <h1>UET-demo</h1>
 
-<!-- 下面第一排显示按钮，点击触发 GetCustomEvent() -->
-<button class="btn" onclick="GetCustomEvent()">Button 1</button>
+    <!-- Action Button -->
+    <button class="btn" onclick="GetCustomEvent()">Button 1</button>
 
-<script>
-    // Get revenue value function
-    function GetRevenueValue() {
-        // Return a sample revenue value - modify as needed
-        return 6;
-    }
+    <!-- Main Script -->
+    <script>
+        // Get revenue value function
+        function GetRevenueValue() {
+            // Return a sample revenue value - modify as needed
+            return 6;
+        }
 
-    // Custom event handling function
-    function GetCustomEvent() {
-        window.uetq = window.uetq || [];
-        window.uetq.push('event', 'purchase', {'revenue_value': GetRevenueValue(), 'currency': 'USD'});
-        console.log('Button 1 clicked: GetCustomEvent() triggered.');
-        // TODO: 在这里添加你的自定义事件逻辑
-        alert('GetCustomEvent() 已触发！');
-    }
-</script>
-
+        // Custom event handling function
+        function GetCustomEvent() {
+            window.uetq = window.uetq || [];
+            
+            // Track purchase event with Bing UET
+            window.uetq.push('event', 'purchase', {
+                'revenue_value': GetRevenueValue(),
+                'currency': 'USD'
+            });
+            
+            console.log('Button 1 clicked: GetCustomEvent() triggered.');
+            alert('GetCustomEvent() 已触发！');
+        }
+    </script>
 </body>
+
 </html>
