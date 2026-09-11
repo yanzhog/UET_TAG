@@ -1,1 +1,77 @@
 
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <script>(function(w, d, t, u, o) {w[u] = w[u] || [], o.ts = (new Date).getTime();var n = d.createElement(t);n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""),n.async = 1, n.onload = n.onreadystatechange = function() {var s = this.readyState;s && "loaded" !== s && "complete" !== s ||(o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"),n.onload = n.onreadystatechange = null)};var i = d.getElementsByTagName(t)[0];i.parentNode.insertBefore(n, i);})(window, document, "script", "uetq", {ti: "187260045",enableAutoSpaTracking: true});</script><!-- You can set default Consent Mode right after the UET tag --><script>window.uetq = window.uetq || [];window.uetq.push('consent', 'default', {'ad_storage': 'denied'});</script><!-- Implement a cookie banner or another method to collect user consent. When a user grants consent (e.g., selects 'Accept' on your banner), update the consent settings using the command below. --><script>window.uetq = window.uetq || [];window.uetq.push('consent', 'update', {'ad_storage': 'granted'});</script>
+    <meta charset="UTF-8">
+<!-- This site is hosted on Netlify. Anyone can build and deploy a site
+     like this one for free: https://netlify.new/?utm_campaign=ai-legible&utm_source=comment&utm_medium=referral&utm_id=4d50707f-8a22-493c-a01d-b60c6e7d2cb7
+     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
+<meta name="hosting-provider" content="Netlify">
+<meta name="netlify-deploy" content="https://netlify.new/?utm_campaign=ai-legible&amp;utm_source=meta&amp;utm_medium=referral&amp;utm_id=4d50707f-8a22-493c-a01d-b60c6e7d2cb7">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UET-demo</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            margin-top: 40px;
+            margin-bottom: 30px;
+            color: #333;
+            text-align: center;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<!-- 居中第一行显示标题 -->
+<h1>UET-demo</h1>
+
+<!-- 下面第一排显示按钮，点击触发 GetCustomEvent() -->
+<button class="btn" onclick="GetCustomEvent()">Button 1</button>
+
+<script>
+
+  function GetCustomEvent() {
+
+   window.uetq = window.uetq || [];
+   window.uetq.push('event', 'purchase', {'revenue_value': GetRevenueValue(), 'currency': 'USD'});
+
+ }
+
+</script>
+
+<script>
+        // 自定义事件处理函数
+        function GetCustomEvent() {
+            console.log('Button 1 clicked: GetCustomEvent() triggered.');
+            // TODO: 在这里添加你的自定义事件逻辑
+            alert('GetCustomEvent() 已触发！');
+        }
+    </script>
+</body>
+</html>
